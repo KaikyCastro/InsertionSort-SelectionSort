@@ -7,10 +7,10 @@
 using namespace std;
 
 //Funcao Selection Sort
-void selectionSort(vector<int>& numbers) {
-    for (int i = 0; i < numbers.size(); i++) {
-        int min = i;
-        for (int j = i + 1; j < numbers.size(); j++) {
+void selectionSort(vector<long int>& numbers) {
+    for (long int i = 0; i < numbers.size(); i++) {
+        long int min = i;
+        for (long int j = i + 1; j < numbers.size(); j++) {
             if (numbers[j] < numbers[min]) {
                 min = j;
             }
@@ -20,21 +20,21 @@ void selectionSort(vector<int>& numbers) {
         }
     }
 
-    for (int i = 0; i < numbers.size(); i++) {
+    for (long int i = 0; i < numbers.size(); i++) {
         cout << numbers[i] << endl;
     }
 }
 
 //Funcao Insertion Sort
-void insertionSort(vector<int>& numbers) {
-    for(int i = 0; i < numbers.size(); i++) {
-        int j = i;
+void insertionSort(vector<long int>& numbers) {
+    for(long int i = 0; i < numbers.size(); i++) {
+        long int j = i;
         while(j > 0 && numbers[j] < numbers[j - 1]) {
             swap(numbers[j], numbers[j - 1]);
             j--;
         }
     }
-    for (int i = 0; i < numbers.size(); i++) {
+    for (long int i = 0; i < numbers.size(); i++) {
         cout << numbers[i] << endl;
     }
 }
@@ -46,7 +46,7 @@ int main() {
     auto start = chrono::high_resolution_clock::now();
 
     //Abre o arquivo para leitura, isso vai depender de onde esta no computador, este é meu diretorio, por isso esses nomes
-    ifstream file("C:\\Users\\Casa\\Documents\\Faculdade\\P4\\Estrutura de Dados\\instancias-num\\num.100000.1.in");
+    ifstream file("C:\\Users\\Casa\\Documents\\Faculdade\\P4\\Estrutura de Dados\\instancias-num\\num.1000.4.in");
 
     //Verificacao de erro ao abrir o arquivo
     if (!file.is_open()) {
@@ -55,10 +55,10 @@ int main() {
     }
     
     //Cria um vetor de inteiros para armazenar os numeros do arquivo
-    vector<int> numbers;
+    vector<long int> numbers;
     string line;
     while (getline(file, line)) {
-        numbers.push_back(stoi(line));
+        numbers.push_back(stoll(line));
     }
 
     cout << "Algoritmo de ordenacao" <<endl;
